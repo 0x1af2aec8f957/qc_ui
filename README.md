@@ -6,7 +6,7 @@
 
 > This is a personal CSS framework that does not recommend using this framework in a formal environment. The framework is only created by the author's convenience and rapid construction of the view! At the same time, the framework quotes some well-known CSS framework code:
 
-* Integrate [fontawesome.font](http://http://fontawesome.io) Version - 4.7.0
+* Integrate [fontawesome.font](http://fontawesome.io) Version - 4.7.0
 * Integrate [animate.css](https://daneden.github.io/animate.css) Version - 3.5.2
 
 ## Explain
