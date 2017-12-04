@@ -310,6 +310,10 @@ input, textarea {
     border: 1px solid #dddee1;
 }
 
+input::placeholder, textarea::placeholder {
+  text-indent: 3px;
+}
+
 input[type=checkbox], input[type=radio] {
     box-sizing: border-box;
     padding: 0;
