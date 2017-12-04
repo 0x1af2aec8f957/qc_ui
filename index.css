@@ -169,6 +169,20 @@ button, input, optgroup, select, textarea {
     transition: border .2s ease-in-out, background .2s ease-in-out, box-shadow .2s ease-in-out;
 }
 
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 14.214px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
 button {
   font-weight: 400;
   text-align: center;
@@ -304,7 +318,16 @@ input[type=checkbox], input[type=radio] {
 }
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-    height: auto
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  height: auto
 }
 
 input[type=search] {
