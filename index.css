@@ -155,7 +155,7 @@ code, kbd, pre, samp {
 
 button, input, optgroup, select, textarea {
     display: inline-block;
-    /*width: 100%;*/
+    box-shadow: none;/* 重置火狐默认的错误阴影 */
     height: 32px;
     line-height: 1.5;
     padding: 4px 7px;
@@ -309,6 +309,18 @@ input, textarea {
     line-height: normal;
     cursor: text;
     border: 1px solid #dddee1;
+}
+
+input[class~="info"], textarea[class~="info"] {
+  border: 1px solid #2db7f5;
+}
+
+input[class~="error"], textarea[class~="error"] {
+  border: 1px solid #ed3f14;
+}
+
+input[class~="warning"], textarea[class~="warning"] {
+  border: 1px solid #f90;
 }
 
 input::placeholder, textarea::placeholder {
