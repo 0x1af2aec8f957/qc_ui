@@ -761,6 +761,11 @@ footer > * {
 .cursor-none { /*禁止*/
     cursor: not-allowed;
     pointer-events: none;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
 }
 
 .cursor-crosshair { /*十字架*/
@@ -861,6 +866,11 @@ footer > * {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
 }
 
 /* makes the font 33% larger relative to the icon container */
