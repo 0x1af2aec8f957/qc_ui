@@ -545,6 +545,26 @@ footer > * {
   margin: auto;
 }
 
+.padding-auto {
+  padding: auto;
+}
+
+.margin-box {
+  margin: 128px;
+}
+
+.padding-box {
+  padding: 128px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
 .col-1 > * {
   width: 100%;
   flex-basis: 100%;
@@ -855,23 +875,6 @@ footer > * {
   justify-content: center;
   -webkit-align-items: center;
   align-items: center;
-}
-
-/*其它盒子*/
-.margin-box {
-  margin: auto;
-}
-
-.padding-box {
-  padding: auto;
-}
-
-.no-margin {
-  margin: 0;
-}
-
-.no-padding {
-  padding: 0;
 }
 
 /*!
