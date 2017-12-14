@@ -841,7 +841,7 @@ footer > * {
   background-size: cover !important;
 }
 
-/*遮罩层*/
+/*遮罩盒子*/
 .mask-box {
   position: fixed;
   top: 0;
@@ -855,6 +855,23 @@ footer > * {
   justify-content: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+/*其它盒子*/
+.margin-box {
+  margin: auto;
+}
+
+.padding-box {
+  padding: auto;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 /*!
