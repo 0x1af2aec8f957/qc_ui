@@ -438,7 +438,7 @@ td, th {
   visibility: hidden;
 }
 
-.clear-both + .clear {
+.clear-both + * {
   clear: both;
 }
 
