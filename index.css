@@ -44,18 +44,17 @@ html, body {
 /*!*! 下一代css布局方案 *!
 @supports (--test: 0) {
   :root {
-    --font_size: 100; !* 填写你的设计图给出的字体参照大小 *!
     --client_width: 640; !* 填写你的设计图给出的屏幕适配大小 *!
   }
 
   html {
-    font-size: calc(var(--font_size) * calc(100% / var(--client_width))) !important;
+    font-size: calc(100% / var(--client_width)) !important;
   }
 }
 
 @supports not (--test: 0) {
   html { !* 完全自适应解决方案，适用于css3,在确保直接使用css3的情况下可以直接替换下面媒体查询相关设置代码 *!
-    font-size: calc(100 * calc(100% / 640)) !important; !* 100=替换为你的设计图给出的字体参照大小 <-> 640=替换为的设计图给出的屏幕适配大小 *!
+    font-size: calc(100% / 640) !important; !* 640=替换为的设计图给出的屏幕适配大小 *!
   }
 }*/
 
@@ -64,7 +63,7 @@ html, body {
 } */
 
 html {
-  font-size: calc(100 * calc(100% / 640)) !important; /* 100=替换为你的设计图给出的字体参照大小 <-> 640=替换为的设计图给出的屏幕适配大小 */
+  font-size: calc(100% / 640) !important; /* var(--client_width) -> 设置为的设计图给出的屏幕适配大小 */
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
