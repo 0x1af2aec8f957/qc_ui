@@ -510,6 +510,14 @@ td, th {
   }
 }
 
+.vh {
+  height: 100%
+}
+
+.vm {
+  height: 100%
+}
+
 .clear-both::after {
   content: "clear.both";
   display: block;
