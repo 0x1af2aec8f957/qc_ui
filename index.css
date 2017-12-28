@@ -658,7 +658,7 @@ footer>* {
   min-width: 1px;
 }
 
-.flex-box:not([class^="col-"]):not([class^="row-"])>* {
+[class|="flex-box"] > * {
   -webkit-flex-grow: 1;
   flex-grow: 1;
   zoom: 1;
