@@ -44,7 +44,7 @@ html, body {
 /*!*! 下一代css布局方案 *!
 @supports (--test: 0) {
   :root {
-    --client_width: 640; !* 填写你的设计图给出的屏幕适配大小 *!
+    --client_width: 640px; !* 填写你的设计图给出的屏幕适配大小 *!
   }
 
   html {
@@ -54,41 +54,107 @@ html, body {
 
 @supports not (--test: 0) {
   html { !* 完全自适应解决方案，适用于css3,在确保直接使用css3的情况下可以直接替换下面媒体查询相关设置代码 *!
-    font-size: calc(100% / 640) !important; !* 640=替换为的设计图给出的屏幕适配大小 *!
+    font-size: calc(100% / 640px) !important; !* 640=替换为的设计图给出的屏幕适配大小 *!
   }
 }*/
 
 html {
-  font-size: 16px;
+  font-size: 1px !important;
 }
 
-@media only screen and (min-width: 401px) {
+@media screen and (min-width: 320px) {
   html {
-    font-size: 16px !important;
+    font-size: .5px !important;
   }
 }
 
-@media only screen and (min-width: 428px) {
+@media screen and (min-width: 360px) {
   html {
-    font-size: 18px !important;
+    font-size: .5625px !important;
   }
 }
 
-@media only screen and (min-width: 481px) {
+@media screen and (min-width: 375px) {
   html {
-    font-size: 20px !important;
+    font-size: .5859375px !important;
   }
 }
 
-@media only screen and (min-width: 569px) {
+@media screen and (min-width: 400px) {
   html {
-    font-size: 22px !important;
+    font-size: .625px !important;
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media screen and (min-width: 414px) {
   html {
-    font-size: 24px !important;
+    font-size: .646875px !important;
+  }
+}
+
+@media screen and (min-width: 440px) {
+  html {
+    font-size: .6875px !important;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: .75px !important;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  html {
+    font-size: .8125px !important;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  html {
+    font-size: .875px !important;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: .9375px !important;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 1px !important;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  html {
+    font-size: 1.0625px !important;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 1.125px !important;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  html {
+    font-size: 1.1875px !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 1.25px !important;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 1.5px !important;
   }
 }
 
