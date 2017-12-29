@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*!
  * qc-ui.css -https://github.com/noteScript/qc_ui/#readme
  * Version - 0.0.6
@@ -623,7 +624,7 @@ footer > * {
   opacity: .75;
 }
 
-.flex-box, [class^="col-"], [class^="row-"], .flex-auto, .flex-wrap, .flex-column, [class^="items-"], [class^="justify-"], [class^="align-"] {
+.flex-box, [class*="col-"], [class*="row-"], .flex-auto, .flex-wrap, .flex-column, [class*="items-"], [class*="justify-"], [class*="align-"] {
   display: flex;
   display: -webkit-flex;
 }
@@ -633,7 +634,7 @@ footer > * {
   -webkit-flex-wrap: wrap;
 }
 
-.flex-column, [class^="row-"] {
+.flex-column, [class*="row-"] {
   -webkit-flex-direction: column;
   flex-direction: column;
 }
@@ -657,7 +658,7 @@ footer > * {
 
 /*弹性盒子*/
 
-.flex-box > *, [class^="col-"] > *, [class^="row-"] > *.flex-auto > *, .flex-wrap > *, .flex-column > *, [class^="items-"] > *, [class^="justify-"] > *, [class^="align-"] > * {
+.flex-box > *, [class*="col-"] > *, [class*="row-"] > *.flex-auto > *, .flex-wrap > *, .flex-column > *, [class*="items-"] > *, [class*="justify-"] > *, [class*="align-"] > * {
   -webkit-flex-shrink: 0;
   -ms-flex: 0 0 auto;
   flex-shrink: 0;
@@ -672,7 +673,7 @@ footer > * {
   zoom: 1;
 }
 
-[class^="row-"] > * {
+[class*="row-"] > * {
   width: 100%;
   min-height: 1px;
   -webkit-flex-direction: column;
