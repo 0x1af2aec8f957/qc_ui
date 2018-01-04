@@ -573,7 +573,7 @@ footer > * {
     text-overflow: ellipsis;
 }
 
-.title {
+header .title {
     position: absolute;
     display: block;
     width: 100%;
