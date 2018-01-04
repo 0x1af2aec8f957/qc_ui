@@ -277,7 +277,7 @@ select {
     -moz-appearance: none;
     -webkit-appearance: none;
     /*在选择框的最右侧中间显示小箭头图片*/
-    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAH0lEQVR42mNgoDnQ13f7TwiTpIkkm0hyHkl+YhhQAABcfyjsqSyTLgAAAABJRU5ErkJggg==") no-repeat scroll right center transparent;
     /*为下拉小箭头留出一点位置，避免被文字覆盖*/
     padding-right: 14.214px;
 }
