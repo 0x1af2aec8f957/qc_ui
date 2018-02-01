@@ -1,7 +1,7 @@
 {
   "name": "qc-ui",
   "title": "qc-ui",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A highly developed style framework based on flex[css-3]",
   "main": "index.css",
   "scripts": {
