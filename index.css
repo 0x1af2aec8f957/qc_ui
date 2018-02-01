@@ -67,8 +67,6 @@ IE	    Firefox	  Chrome	  Safari	 Opera	iOS_Safari	Android_Browser	Android_Chrom
 9.0+	  19.0+	    26.0+	    6.0+	   15.0+  6.0+	      4.4+	          26.0+           ---支持
 */
 
-/* ！！！备注：需要考虑完全自适应的低版本兼容问题，请在安装的时候指定安装版本为：0.0.8 */
-
 html {
   font-size: 100px !important;
   font-size: 6.4vw !important; /* 参考屏幕为640，完全自适应:手机端默认优先适配，换算规则 ==> [screen:640]/[vw:100] */
