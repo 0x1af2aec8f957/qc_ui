@@ -2,7 +2,7 @@
 
 /*!
  * qc-ui.css -https://github.com/noteScript/qc_ui/#readme
- * Version - 0.0.8
+ * Version - 0.0.9
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  *
  * Copyright (c) 2017 Ed Me(603803799@qq.com)
@@ -59,11 +59,22 @@ html, body {
   }
 }*/
 
+/* ！！！注意：需要考虑完全自适应的低版本兼容问题，请在安装的时候指定安装版本为：0.0.8 */
+
+/* 
+IE	    Firefox	  Chrome	  Safari	 Opera	iOS_Safari	Android_Browser	Android_Chrome
+6.0-8.0	2.0-18.0	4.0-25.0	3.1-5.1	 15.0+	3.2-5.1	    2.1-4.3	        18.0-25.0       ---不支持
+9.0+	  19.0+	    26.0+	    6.0+	   15.0+  6.0+	      4.4+	          26.0+           ---支持
+*/
+
+/* ！！！备注：需要考虑完全自适应的低版本兼容问题，请在安装的时候指定安装版本为：0.0.8 */
+
 html {
   font-size: 100px !important;
+  font-size: 6.4vw !important; /* 参考屏幕为640，完全自适应:手机端默认优先适配，换算规则 ==> [screen:640]/[vw:100] */
 }
 
-@media screen and (min-width: 320px) {
+/*@media screen and (min-width: 320px) {
   html {
     font-size: 50px !important;
   }
@@ -157,7 +168,7 @@ html {
   html {
     font-size: 150px !important;
   }
-}
+}*/
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
