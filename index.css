@@ -267,10 +267,8 @@ button, input, optgroup, select, textarea {
   display: inline-block;
   box-shadow: none;
   /* 重置火狐默认的错误阴影 */
-  height: 32px;
-  line-height: 1.5;
-  padding: 4px 7px;
-  font-size: 12px;
+  padding: .05rem .08rem;
+  font-size: .25rem;
   margin: 0;
   border-radius: 2px;
   color: #495060;
@@ -308,7 +306,7 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 6px 15px;
+  padding: .06rem .15rem;
   transition: color .2s linear, background-color .2s linear, border .2s linear;
   color: #495060;
   background-color: #f7f7f7;
