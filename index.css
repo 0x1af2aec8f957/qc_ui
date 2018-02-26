@@ -268,7 +268,6 @@ button, input, optgroup, select, textarea {
   box-shadow: none;
   /* 重置火狐默认的错误阴影 */
   padding: .05rem .08rem;
-  font-size: .25rem;
   margin: 0;
   border-radius: 2px;
   color: #495060;
