@@ -935,6 +935,10 @@ header .title {
   user-select: none;
 }
 
+.cursor-grabbing {
+  cursor: grabbing; /*手抓型*/
+}
+
 .cursor-none {
   /*禁止*/
   cursor: not-allowed;
