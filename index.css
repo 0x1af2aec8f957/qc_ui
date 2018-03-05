@@ -2,7 +2,7 @@
 
 /*!
  * qc-ui.css -https://github.com/noteScript/qc_ui/#readme
- * Version - 0.1.1
+ * Version - 0.1.2
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  *
  * Copyright (c) 2017 Ed Me(603803799@qq.com)
@@ -4616,8 +4616,8 @@ header .title {
     font-family: 'Font Awesome 5 Brands';
     font-style: normal;
     font-weight: normal;
-    src: url("../webfonts/fa-brands-400.eot");
-    src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg");
+    src: url("./assets/fonts/fa-brands-400.eot");
+    src: url("./assets/fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/fa-brands-400.woff2") format("woff2"), url("./assets/fonts/fa-brands-400.woff") format("woff"), url("./assets/fonts/fa-brands-400.ttf") format("truetype"), url("./assets/fonts/fa-brands-400.svg#fontawesome") format("svg");
 }
 
 .fab {
