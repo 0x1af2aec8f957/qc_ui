@@ -415,6 +415,7 @@ input, textarea {
   line-height: normal;
   cursor: text;
   border: 1px solid #dddee1;
+  padding:2%;
 }
 
 input[class~="info"], textarea[class~="info"] {
