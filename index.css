@@ -303,7 +303,7 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: .72% 2%;
+  padding: .4% 2%;
   transition: color .2s linear, background-color .2s linear, border .2s linear;
   color: #495060;
   background-color: #f7f7f7;
