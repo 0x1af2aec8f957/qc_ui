@@ -833,9 +833,9 @@ header .title {
   align-items: baseline;
 }
 
-.items-strecth {
-  -webkit-align-items: strecth;
-  align-items: strecth;
+.items-stretch {
+  -webkit-align-items: stretch;
+  align-items: stretch;
 }
 
 .justify-start {
