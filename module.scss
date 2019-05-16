@@ -1,0 +1,590 @@
+$background-attribute: (
+        color: $colors,
+        size: (cover, contain, auto),
+        clip: (border, padding, content, text),
+        origin: (border, padding, content),
+        position: (center, left, right, top, bottom),
+        attachment: (fixed, scroll, local),
+        repeat: (repeat-x, repeat-y, repeat, no-repeat, round, space)
+);
+$border-attribute: (
+        color: $colors,
+        width: (medium, thin, thick),
+        style: (none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset),
+);
+$column-attribute: (
+        width:(auto),
+        count:(auto),
+        gap:(normal),
+        rule:(width:(medium, thin, thick), style:(none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset), color: $colors),
+        span:(none, all),
+        fill:(auto, balance),
+        break:(before:(auto, always, avoid, left, right, page, column, avoid-page, avoid-column), after:(auto, always, avoid, left, right, page, column, avoid-page, avoid-column), inside:(auto, avoid, avoid-page, avoid-column))
+);
+$cursor-state: (auto, default, none, context-menu, help, pointer, progress, wait, cell, crosshair, text, vertical-text, alias, copy, move, no-drop, not-allowed, e-resize, n-resize, ne-resize, nw-resize, s-resize, se-resize, sw-resize, w-resize, ew-resize, ns-resize, nesw-resize, nwse-resize, col-resize, row-resize, all-scroll, zoom-in, zoom-out, grab, grabbing);
+$userSelect-state: (none, text, all, element);
+$pointerEvents-state: (auto, none, visiblepainted, visiblefill, visiblestroke, visible, painted, fill, stroke, all);
+$imeMode-state: (auto, normal, active, inactive, disabled);
+$resize-state: (none, both, horizontal, vertical);
+$boxSizing-attribute: (content-box, border-box);
+$outline-attribute: (color: map-merge($colors, (invert:invert)), width:(medium, thin, thick), style:(none, dotted, dashed, solid, double, groove, ridge, inset, outset));
+$text-attribute: (
+        overflow: (clip, ellipsis),
+        decoration: (line: (none, underline, overline, line-through, blink), color:$colors, style:(solid, double, dotted, dashed, wavy), skip:(none, objects, spaces, ink, edges, box-decoration)),
+        underline-position: (auto, under, left, right),
+        transform: (none, capitalize, uppercase, lowercase, full-width),
+        align: (start, end, left, right, center, justify, match-parent, justify-all),
+        align-last: (auto, start, end, left, right, center, justify),
+        justify: (auto, none, inter-word, inter-ideograph, inter-cluster, distribute, kashida),
+        indent: (each-line, hanging),
+);
+$textDirection-state: (ltr, rtl);
+$whiteSpace-state: (normal, pre, nowrap, pre-wrap, pre-line);
+$wordBreak-state: (normal, keep-all, break-all, break-word);
+$wordSpacing-state: (normal);
+$letterSpacing-state: (normal);
+$float-state: (normal, left, right);
+$clear-state: (none, left, right, both);
+$visibility-state: (visible, hidden, collapse);
+$overflow-state: (visible, hidden, scroll, auto, clip);
+$position-state: (static, relative, absolute, fixed, sticky);
+$verticalAlign-state: (baseline, sub, super, top, text-top, middle, bottom, text-bottom);
+$appearance-state: (none, button, button-arrow-down, button-arrow-next, button-arrow-previous, button-arrow-up, button-bevel, button-focus, caps-lock-indicator, caret, checkbox, checkbox-container, checkbox-label, checkmenuitem, default-button, dualbutton, groupbox, listbox, listitem, media-fullscreen-button, media-mute-button, media-play-button, media-seek-back-button, media-seek-forward-button, media-slider, media-sliderthumb, menuarrow, menubar, menucheckbox, menuimage, menuitem, menuitemtext, menulist, menulist-button, menulist-text, menulist-textfield, menupopup, menuradio, menuseparator, meterbar, meterchunk, progressbar, progressbar-vertical, progresschunk, progresschunk-vertical, push-button, radio, radio-container, radio-label, radiomenuitem, resizer, resizerpanel, scale-horizontal, scalethumbend, scalethumb-horizontal, scalethumbstart, scalethumbtick, scalethumb-vertical, scale-vertical, scrollbarbutton-up, scrollbarbutton-right, scrollbarbutton-down, scrollbarbutton-left, scrollbargripper-horizontal, scrollbargripper-vertical, scrollbarthumb-horizontal, scrollbarthumb-vertical, scrollbartrack-horizontal, scrollbartrack-vertical, searchfield, searchfield-cancel-button, searchfield-decoration, searchfield-results-button, searchfield-results-decoration, separator, sheet, slider-horizontal, sliderthumb-horizontal, sliderthumb-vertical, slider-vertical, spinner, spinner-downbutton, spinner-textfield, spinner-upbutton, splitter, square-button, statusbar, statusbarpanel, tab, tabpanel, tabpanels, tab-scroll-arrow-back, tab-scroll-arrow-forward, textarea, textfield, textfield-multiline, toolbar, toolbarbutton, toolbarbutton-dropdown, toolbargripper, toolbox, tooltip, treeheader, treeheadercell, treeheadersortarrow, treeitem, treeline, treetwisty, treetwistyopen, treeview);
+$listStyle-attribute: (image:(none), position:(outside, inside), type:(disc, circle, square, decimal, lower-roman, upper-roman, lower-alpha, upper-alpha, none, armenian, cjk-ideographic, georgian, lower-greek, hebrew, hiragana, hiragana-iroha, katakana, katakana-iroha, lower-latin, upper-latin));
+$display-state: (none, inline, block, list-item, inline-block, table, inline-table, table-caption, table-cell, table-row, table-row-group, table-column, table-column-group, table-footer-group, table-header-group, run-in, box, inline-box, flexbox, inline-flexbox, flex, inline-flex);
+$flex-attribute: (
+        basis: (auto, content),
+        direction: (row, row-reverse, column, column-reverse),
+        wrap: (nowrap, wrap, wrap-reverse),
+);
+$flex-alignContent-state: (flex-start, flex-end, center, space-between, space-around, stretch);
+$flex-alignItems-state: (flex-start, flex-end, center, baseline, stretch);
+$flex-alignSelf-state: (flex-start, flex-end, center, baseline, stretch);
+$flex-justifyContent-state: (flex-start, flex-end, center, baseline, stretch);
+$transform-attribute: (origin: (left, center, right, top, center, bottom), style:(flat, preserve-3d));
+$transform-perspective-state: (none);
+$transform-perspectiveOrigin-state: (left, center, right, top, center, bottom);
+$transform-backfaceVisibility-state: (visible, hidden);
+$transition-attribute: (property:(none, all), timing-function:(linear, ease, ease-in, ease-out, ease-in-out, step-start, step-end));
+
+// common styleSheet
+
+@for $index from 0 through $numbers {
+  @include generate-style(border-width, $index, #{$index}px);
+  @include generate-style(column-width, $index, #{$index}px);
+  @include generate-style(outline-width, $index, #{$index}px);
+  @include generate-style(outline-offset, $index, #{$index}px);
+  @include generate-style(white-space, $index, #{$index}px);
+  @include generate-style(word-spacing, $index, #{$index}px);
+  @include generate-style(letter-spacing, $index, #{$index}px);
+  @include generate-style(text-indent, $index, #{$index}px);
+  @include generate-style(line-height, $index);
+  @include generate-style(tab-size, $index);
+  @include generate-style(opacity, $index, $index / 10);
+  @include generate-style(margin-top, $index, #{$index}px);
+  @include generate-style(margin-right, $index, #{$index}px);
+  @include generate-style(margin-bottom, $index, #{$index}px);
+  @include generate-style(margin-left, $index, #{$index}px);
+  @include generate-style(padding-top, $index, #{$index}px);
+  @include generate-style(padding-right, $index, #{$index}px);
+  @include generate-style(padding-bottom, $index, #{$index}px);
+  @include generate-style(padding-left, $index, #{$index}px);
+
+  .text-weight-#{$index} {
+    font-weight: $index * 100;
+  }
+
+  .flex-order-#{$index} {
+    order: $index;
+  }
+
+  @include generate-style(flex-grow, $index);
+  @include generate-style(flex-shrink, $index);
+  @include generate-style(flex-shrink, $index);
+
+  @include generate-style(transition-duration, $index, #{$index}s);
+  @include generate-style(transition-delay, $index, #{$index}s);
+
+}
+
+// background styleSheet
+
+@include generate-styleSheet(background, $background-attribute);
+@include generate-style(background-image, none);
+.background-reset {
+  @include generate-style(background-color, transparent);
+  @include generate-style(background-repeat, no-repeat);
+  @include generate-style(background-attachment, center);
+  @include generate-style(background-position, scroll);
+  @include generate-style(background-origin, padding-box);
+  @include generate-style(background-clip, border-box);
+  @include generate-style(background-size, contain);
+}
+
+.background-default {
+  @extend .background-reset;
+  @include generate-style(background-color, white, map-get($colors, white));
+
+  min-height: 1px;
+  min-width: 1px;
+}
+
+.box-shadow-none {
+  box-shadow: none
+}
+
+// border styleSheet
+
+@include generate-styleSheet(border, $border-attribute);
+.border-default {
+  border: thin solid map-get($colors, grey);
+}
+
+.border-reset {
+  border: none;
+}
+
+// columns styleSheet
+
+@include generate-styleSheet(column, $column-attribute);
+.column-rule-default {
+  column-rule: thin solid map-get($colors, grey);
+}
+
+// userInterface styleSheet
+
+@include generate-styleSheet(cursor, $cursor-state);
+@include generate-styleSheet(user-select, $userSelect-state);
+@include generate-styleSheet(pointer-events, $pointerEvents-state);
+@include generate-styleSheet(ime-mode, $imeMode-state);
+@include generate-styleSheet(resize, $resize-state);
+@include generate-styleSheet(box-sizing, $boxSizing-attribute);
+@include generate-styleSheet(outline, $outline-attribute);
+@include generate-styleSheet(appearance, $appearance-state);
+@include generate-style(zoom, none);
+@include generate-style(nav-left, auto);
+@include generate-style(nav-down, auto);
+@include generate-style(nav-right, auto);
+@include generate-style(nav-up, auto);
+@include generate-style(nav-index, auto);
+.cursor-reset {
+  @include generate-style(cursor, none);
+  @include generate-style(user-select, none);
+  @include generate-style(pointer-events, none);
+  @include generate-style(ime-mode, disabled);
+}
+
+// text styleSheet
+
+@include generate-styleSheet(text, $text-attribute);
+@each $state in $textDirection-state {
+  .text-direction-#{$state} {
+    direction: $state;
+  }
+}
+
+@each $key, $value in $colors {
+  .text-color-#{$key} {
+    color: $value;
+  }
+}
+
+@include generate-styleSheet(white-space, $whiteSpace-state);
+@include generate-styleSheet(word-break, $wordBreak-state);
+@include generate-styleSheet(word-spacing, $wordSpacing-state);
+@include generate-styleSheet(letter-spacing, $letterSpacing-state);
+@include generate-styleSheet(vertical-align, $verticalAlign-state);
+
+.text-shadow-none {
+  text-shadow: none;
+}
+
+.text-ellipsis {
+  @include generate-style(text-overflow, ellipsis);
+  @include generate-style(white-space, nowrap);
+  @include generate-style(overflow, hidden);
+  @include generate-style(display, block);
+  width: 100%;
+}
+
+.text-style-normal {
+  font-style: normal
+}
+
+.text-style-italic {
+  font-style: italic
+}
+
+.text-style-oblique {
+  font-style: oblique
+}
+
+.text-variant-normal {
+  font-variant: normal
+}
+
+.text-variant-small-caps {
+  font-variant: small-caps
+}
+
+// 伪类
+
+.content-before:before {
+  content: attr(content-before)
+}
+
+.content-after:after {
+  content: attr(content-after)
+}
+
+.content-none {
+  &:after, &:before {
+    content: none
+  }
+}
+
+.content-normal {
+  &:after, &:before {
+    content: normal
+  }
+}
+
+.content-hidden {
+  &:after, &:before {
+    content: "";
+    visibility: hidden
+  }
+}
+
+// table styleSheet
+
+// list styleSheet
+
+@include generate-styleSheet(list-style, $listStyle-attribute);
+@include generate-style(list-style, none);
+
+// dimension styleSheet
+
+.margin-auto {
+  margin: auto;
+}
+
+.padding-auto {
+  padding: auto;
+}
+
+// layout styleSheet
+
+@include generate-styleSheet(display, $display-state);
+@include generate-styleSheet(float, $float-state);
+@include generate-styleSheet(clear, $clear-state);
+@include generate-styleSheet(visibility, $visibility-state);
+@include generate-styleSheet(overflow, $overflow-state);
+
+.overflow-scroll-x::-webkit-scrollbar, .overflow-scroll-y::-webkit-scrollbar {
+  display: none
+}
+
+.overflow-x, .overflow-y {
+  -webkit-overflow-scrolling: touch;
+}
+
+.overflow-scroll-x {
+  overflow-x: scroll;
+
+  &:not(.overflow-scroll-y) {
+    overflow-y: hidden;
+  }
+}
+
+.overflow-scroll-y {
+  overflow-y: scroll;
+
+  &:not(.overflow-scroll-x) {
+    overflow-x: hidden;
+  }
+}
+
+// positioning styleSheet
+
+@include generate-styleSheet(position, $position-state);
+
+// flex styleSheet
+
+@include generate-styleSheet(flex, $flex-attribute);
+
+[class|="flex"], .display-flex {
+  @include generate-style(display, flex);
+
+  & > * {
+    flex-shrink: 0; // 处理DOM塌陷
+    min-height: 1px;
+    min-width: 1px;
+  }
+}
+
+.flex-auto {
+  flex: 1;
+}
+
+@each $state in $flex-alignContent-state {
+  .flex-align-content-#{$state} {
+    align-content: $state;
+  }
+}
+
+@each $state in $flex-alignItems-state {
+  .flex-align-items-#{$state} {
+    align-items: $state;
+  }
+}
+
+@each $state in $flex-alignSelf-state {
+  .flex-align-self-#{$state} {
+    align-items: $state;
+  }
+}
+
+@each $state in $flex-justifyContent-state {
+  .flex-justify-content-#{$state} {
+    align-items: $state;
+  }
+}
+
+// transform styleSheet
+
+@include generate-styleSheet(transform, $transform-attribute);
+
+@each $state in $transform-perspective-state {
+  .transform-perspective-#{$state} {
+    perspective: $state;
+  }
+}
+
+@each $state in $transform-perspectiveOrigin-state {
+  .transform-perspective-origin-#{$state} {
+    perspective-origin: $state;
+  }
+}
+
+@each $state in $transform-backfaceVisibility-state {
+  .transform-backface-visibility-#{$state} {
+    backface-visibility: $state;
+  }
+}
+
+// transition styleSheet
+
+@include generate-styleSheet(transition, $transition-attribute);
+
+// input styleSheet
+
+.input-reset,
+.optgroup-reset,
+.select-reset,
+.textarea-reset {
+  &, &:focus, &:hover, &:active {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
+    padding: 0;
+    text-indent: 0;
+    background-color: map-get($colors, transparent);
+  }
+
+  &::placeholder {
+    color: map-get($colors, grey);
+    text-indent: .8em;
+  }
+}
+
+.input-default,
+.optgroup-default,
+.select-default,
+.textarea-default {
+  border: thin solid map-get($colors, grey);
+
+  &::placeholder {
+    color: map-get($colors, grey)
+  }
+}
+
+input:not(.input-reset):not(.input-default),
+optgroup:not(.optgroup-reset):not(.optgroup-default),
+select:not(.select-reset):not(.select-default),
+textarea:not(.textarea-reset):not(.textarea-default) {
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), color 1ms;
+  position: relative;
+  vertical-align: middle;
+  font-size: .9em;
+  cursor: text;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  padding: 1.5% 2.5%;
+  background-color: map-get($colors, transparent);
+
+  &::placeholder {
+    color: map-get($colors, grey)
+  }
+
+  &:focus, &:active {
+    border-bottom-width: thin;
+    border-style: solid;
+    border-color: map-get($colors, grey);
+  }
+
+  &:hover {
+
+  }
+
+  &.success {
+    background-color: map-get($colors, success);
+    border-color: map-get($colors, success);
+  }
+
+  &.error {
+    background-color: map-get($colors, error);
+    border-color: map-get($colors, error);
+  }
+
+  &.info {
+    background-color: map-get($colors, info);
+    border-color: map-get($colors, info);
+  }
+
+  &.warning {
+    background-color: map-get($colors, warning);
+    border-color: map-get($colors, warning);
+  }
+}
+
+// button styleSheet
+
+@each $key, $value in $colors {
+  .button-color-#{$key} {
+    background-color: $value;
+  }
+}
+
+.button-default {
+  border: thin solid map-get($colors, grey);
+}
+
+.button-reset {
+  &, &:focus, &:hover, &:active {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
+    background-color: map-get($colors, transparent);
+  }
+}
+
+button:not(.button-reset):not(.button-default) {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0;
+  text-shadow: none;
+  display: inline-block;
+  border-style: none;
+  text-align: center;
+  border-radius: 2px;
+  font-size: .9em;
+  font-weight: 500;
+  margin: 6px 8px;
+  min-width: 88px;
+  outline: 0;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), color 1ms;
+  position: relative;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  color: map-get($colors, white);
+  background-color: map-get($colors, grey);
+  will-change: box-shadow;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  padding: 1.5% 2.5%;
+  overflow: visible;
+  -webkit-appearance: button;
+  -webkit-writing-mode: horizontal-tb !important;
+
+  &.success {
+    background-color: map-get($colors, success);
+    border-color: map-get($colors, success);
+  }
+
+  &.error {
+    background-color: map-get($colors, error);
+    border-color: map-get($colors, error);
+  }
+
+  &.info {
+    background-color: map-get($colors, info);
+    border-color: map-get($colors, info);
+  }
+
+  &.warning {
+    background-color: map-get($colors, warning);
+    border-color: map-get($colors, warning);
+  }
+
+  &::before {
+    border-radius: inherit;
+    color: inherit;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0.12;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+    width: 100%;
+    text-decoration: inherit;
+    vertical-align: inherit;
+  }
+
+  &:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+    &::before {
+      background-color: currentColor;
+    }
+  }
+}
+
+// code styleSheet
+
+code, pre {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  font-weight: 400;
+  background-color: transparent;
+  line-height: 1em;
+  font-size: .9em;
+  padding: .25em .5em .25em;
+  white-space: pre-wrap;
+  color: #08c;
+}
+
+pre {
+  white-space: pre;
+  word-wrap: normal;
+  background-color: map-get($colors, grey);
+  padding: 1.25em 1.5em;
+  -webkit-font-smoothing: inherit;
+  color: currentColor;
+}

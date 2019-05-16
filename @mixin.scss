@@ -1,0 +1,43 @@
+@mixin generate-style($prefix, $attr, $value: null) { // 生成单例样式
+  .#{$prefix}-#{$attr} {
+    #{$prefix}: if($value, $value, $attr);
+  }
+}
+
+@mixin generate-styleSheet($prefix, $data) { // 根据数据生成样式表[map|list|string]
+  @if type-of($data) == list {
+    @each $value in $data {
+      @if type-of($value) == list {
+        @include generate-styleSheet($prefix, $value)
+      }
+
+      @else if type-of($value) == map {
+        @include generate-styleSheet($prefix, $value)
+      }
+
+      @else {
+        @include generate-style($prefix, $value)
+      }
+    }
+  }
+
+  @else if type-of($data) == map {
+    @each $key, $value in $data {
+      @if type-of($value) == list {
+        @include generate-styleSheet(#{$prefix}-#{$key}, $value)
+      }
+
+      @else if type-of($value) == map {
+        @include generate-styleSheet(#{$prefix}-#{$key}, $value)
+      }
+
+      @else {
+        @include generate-style($prefix, $key, $value)
+      }
+    }
+  }
+
+  @else {
+    @include generate-style($prefix, $data)
+  }
+}
