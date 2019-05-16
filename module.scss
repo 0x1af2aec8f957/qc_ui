@@ -59,8 +59,8 @@ $flex-attribute: (
 );
 $flex-alignContent-state: (flex-start, flex-end, center, space-between, space-around, stretch);
 $flex-alignItems-state: (flex-start, flex-end, center, baseline, stretch);
-$flex-alignSelf-state: (flex-start, flex-end, center, baseline, stretch);
-$flex-justifyContent-state: (flex-start, flex-end, center, baseline, stretch);
+$flex-alignSelf-state: (auto, flex-start, flex-end, center, baseline, stretch);
+$flex-justifyContent-state: (flex-start, flex-end, center, space-between, space-around);
 $transform-attribute: (origin: (left, center, right, top, center, bottom), style:(flat, preserve-3d));
 $transform-perspective-state: (none);
 $transform-perspectiveOrigin-state: (left, center, right, top, center, bottom);
