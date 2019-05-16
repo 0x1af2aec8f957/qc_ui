@@ -6,8 +6,8 @@
 
 > This is a personal CSS framework that does not recommend using this framework in a formal environment. The framework is only created by the author's convenience and rapid construction of the view! At the same time, the framework quotes some well-known CSS framework code:
 
-* Integrate [fontawesome.font](http://fontawesome.com) Version - 5.0.8
-* Integrate [animate.css](https://daneden.github.io/animate.css) Version - 3.5.2
+* Integrate [animate.css](https://daneden.github.io/animate.css) Version - 3.7.0
+* Integrate [normalize.css](https://github.com/necolas/normalize.css) Version - 8.0.1
 
 ## Explain
 
