@@ -1,8 +1,8 @@
 $background-attribute: (
         color: $colors,
         size: (cover, contain, auto),
-        clip: (border, padding, content, text),
-        origin: (border, padding, content),
+        clip: (border-box, padding-box, content-box, text),
+        origin: (border-box, padding-box, content-box),
         position: (center, left, right, top, bottom),
         attachment: (fixed, scroll, local),
         repeat: (repeat-x, repeat-y, repeat, no-repeat, round, space)
@@ -74,7 +74,6 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
   @include generate-style(column-width, $index, #{$index}px);
   @include generate-style(outline-width, $index, #{$index}px);
   @include generate-style(outline-offset, $index, #{$index}px);
-  @include generate-style(white-space, $index, #{$index}px);
   @include generate-style(word-spacing, $index, #{$index}px);
   @include generate-style(letter-spacing, $index, #{$index}px);
   @include generate-style(text-indent, $index, #{$index}px);
@@ -89,6 +88,8 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
   @include generate-style(padding-right, $index, #{$index}px);
   @include generate-style(padding-bottom, $index, #{$index}px);
   @include generate-style(padding-left, $index, #{$index}px);
+  @include generate-style(z-index, $index);
+  @include generate-style(zoom, $index);
 
   .text-weight-#{$index} {
     font-weight: $index * 100;
@@ -112,18 +113,18 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 @include generate-styleSheet(background, $background-attribute);
 @include generate-style(background-image, none);
 .background-reset {
-  @include generate-style(background-color, transparent);
-  @include generate-style(background-repeat, no-repeat);
-  @include generate-style(background-attachment, center);
-  @include generate-style(background-position, scroll);
-  @include generate-style(background-origin, padding-box);
-  @include generate-style(background-clip, border-box);
-  @include generate-style(background-size, contain);
+  background-color: map-get($colors, transparent);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: contain;
 }
 
 .background-default {
   @extend .background-reset;
-  @include generate-style(background-color, white, map-get($colors, white));
+  background-color: map-get($colors, white);
 
   min-height: 1px;
   min-width: 1px;
@@ -168,10 +169,10 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 @include generate-style(nav-up, auto);
 @include generate-style(nav-index, auto);
 .cursor-reset {
-  @include generate-style(cursor, none);
-  @include generate-style(user-select, none);
-  @include generate-style(pointer-events, none);
-  @include generate-style(ime-mode, disabled);
+  cursor: none;
+  user-select: none;
+  pointer-events: none;
+  ime-mode: disabled;
 }
 
 // text styleSheet
@@ -200,10 +201,10 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 }
 
 .text-ellipsis {
-  @include generate-style(text-overflow, ellipsis);
-  @include generate-style(white-space, nowrap);
-  @include generate-style(overflow, hidden);
-  @include generate-style(display, block);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
   width: 100%;
 }
 
@@ -281,11 +282,23 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 @include generate-styleSheet(visibility, $visibility-state);
 @include generate-styleSheet(overflow, $overflow-state);
 
-.overflow-scroll-x::-webkit-scrollbar, .overflow-scroll-y::-webkit-scrollbar {
-  display: none
+.clear-float:after {
+  content: 'clear.float';
+  opacity: 1;
+  overflow: hidden;
+  visibility: hidden;
+  color: transparent;
+  background: transparent;
+  height: 0;
+  display: block;
+  clear: both;
 }
 
-.overflow-x, .overflow-y {
+.overflow-scroll-x::-webkit-scrollbar, .overflow-scroll-y::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-scroll-x, .overflow-scroll-y {
   -webkit-overflow-scrolling: touch;
 }
 
@@ -313,8 +326,8 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 
 @include generate-styleSheet(flex, $flex-attribute);
 
-[class|="flex"], .display-flex {
-  @include generate-style(display, flex);
+[class|="flex"], .display-flex, .flex-auto {
+  display: flex;
 
   & > * {
     flex-shrink: 0; // 处理DOM塌陷
@@ -323,7 +336,7 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
   }
 }
 
-.flex-auto {
+.flex-auto > * {
   flex: 1;
 }
 
@@ -341,13 +354,13 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 
 @each $state in $flex-alignSelf-state {
   .flex-align-self-#{$state} {
-    align-items: $state;
+    align-self: $state;
   }
 }
 
 @each $state in $flex-justifyContent-state {
   .flex-justify-content-#{$state} {
-    align-items: $state;
+    justify-content: $state;
   }
 }
 
@@ -587,4 +600,24 @@ pre {
   padding: 1.25em 1.5em;
   -webkit-font-smoothing: inherit;
   color: currentColor;
+}
+
+// gap less
+
+.margin-less {
+  margin: 0 !important;
+}
+
+.padding-less {
+  padding: 0 !important;
+}
+
+@each $direction in $directions {
+  .margin-#{$direction}-less {
+    margin-#{$direction}: 0 !important;
+  }
+
+  .padding-#{$direction}-less {
+    padding-#{$direction}: 0 !important;
+  }
 }

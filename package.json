@@ -1,14 +1,15 @@
 {
   "name": "qc-ui",
   "title": "qc-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A highly developed style framework based on flex[css-3]",
-  "main": "index.scss",
+  "main": "dist/qc_ui.min.css",
   "scripts": {
-    "example": "node index.css"
+    "build": "sass src/main.scss dist/qc_ui.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "keywords": [
     "ui",
@@ -16,7 +17,7 @@
     "base-ui",
     "reset-ui"
   ],
-  "author": "603803799@qq.com",
+  "author": "0x23fd5097@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/noteScript/qc_ui/issues"
