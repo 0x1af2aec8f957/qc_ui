@@ -185,9 +185,11 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
 }
 
 @each $key, $value in $colors {
-  .text-color-#{$key} {
-    color: $value;
-  }
+  .text-color-#{$key} { color: $value; }
+}
+
+@for $index from 12 through $numbers * 3 {
+  .text-size-#{$index} { font-size: #{$index}px; }
 }
 
 @include generate-styleSheet(white-space, $whiteSpace-state);
