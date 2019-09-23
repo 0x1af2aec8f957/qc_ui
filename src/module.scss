@@ -294,12 +294,14 @@ $transition-attribute: (property:(none, all), timing-function:(linear, ease, eas
   clear: both;
 }
 
-.overflow-scroll-x::-webkit-scrollbar, .overflow-scroll-y::-webkit-scrollbar {
+.overflow-scroll-x::-webkit-scrollbar, .overflow-scroll-y::-webkit-scrollbar { // Chrome,Safari
   display: none;
 }
 
 .overflow-scroll-x, .overflow-scroll-y {
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; // IOS
+  -ms-overflow-style: none; // IE10+
+  scrollbar-width: none; // Firefox
 }
 
 .overflow-scroll-x {
